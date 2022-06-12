@@ -154,7 +154,7 @@ code {
 }
 .Content .Content-object
 {
-    @apply pb-4 relative;
+    @apply pb-4 relative flex flex-col;
 }
 .Content-row
 {
@@ -165,7 +165,43 @@ code {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 1rem;
+    @apply pt-8;
 }
+.Content-grid-item
+{
+    @apply flex flex-col items-center justify-center relative;
+}
+.Content-grid-item-image
+{
+    @apply w-full h-full object-cover;
+}
+.Content-grid-item-image img
+{
+    @apply w-full h-full object-cover;
+}
+.Content-grid-item-details
+{
+    @apply flex flex-row items-center justify-center gap-2;
+}
+.Content-grid-item-details-buttons
+{
+    @apply flex flex-row items-center justify-center gap-2;
+}
+.Content-grid-item-details-buttons button
+{
+    @apply bg-white text-primary border-primary border font-bold py-2 px-4 rounded relative 
+    /* hover:translate-y-1 focus:outline-none active:translate-y-1; */
+}
+.Content-grid-item-details-text
+{
+    @apply flex flex-col items-center;
+}
+.Content-grid-item-details-text h2
+{
+    @apply font-bold text-xl;
+}
+
+
 
 
 

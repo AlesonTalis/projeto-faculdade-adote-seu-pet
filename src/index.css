@@ -11,6 +11,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  overflow-y: auto;
+
   @apply bg-main text-text;
 }
 
@@ -23,6 +25,15 @@ code {
     
 }
 
+#root
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 .App
 {
@@ -34,9 +45,15 @@ code {
     @apply flex flex-col max-w-screen-lg mx-auto w-full h-full;
 }
 
+.Banner
+{
+    height: calc(100vh - 3rem)
+}
+
 .Header
 {
-    @apply flex flex-row items-center justify-between px-4 sticky top-0 left-0 right-0 bg-primary text-white;
+    z-index: 9999;
+    @apply flex flex-row items-center justify-between px-4 sticky top-0 left-0 right-0 bg-primary text-white z-50;
 }
 .Header .Content
 {
@@ -72,4 +89,48 @@ code {
 .Header a:hover
 {
     text-shadow: 0 0 0.5em rgb(255 255 255 / 75%);
+}
+
+
+
+.Banner .Banner-content
+{
+    @apply flex flex-col items-center justify-center h-full overflow-hidden relative text-white;
+}
+.Banner .Banner-content .Banner-content-item-text
+{
+    top: 50%;
+    transform: translateY(-50%);
+    @apply absolute max-w-screen-lg;
+}
+.Banner .Banner-content .Banner-content-item-text > div
+{
+    max-width: 40%;
+    @apply text-left;
+}
+.Banner .Banner-content .Banner-content-item-text > div > *
+{
+    @apply mb-4
+}
+.Banner-content h1
+{
+    @apply font-bold text-5xl;
+}
+.Banner .Banner-content img
+{
+    @apply w-full h-full min-w-full min-h-full object-cover;
+}
+
+
+
+
+
+
+.btn
+{
+    @apply bg-white text-primary border-primary border font-bold py-2 px-4 rounded relative hover:translate-y-2 focus:outline-none active:translate-y-2;
+}
+.btn.btn-primary
+{
+    @apply bg-primary text-white border-white font-bold py-2 px-4 rounded relative hover:translate-y-2 focus:outline-none active:translate-y-2;
 }

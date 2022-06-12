@@ -226,6 +226,18 @@ code {
 .Content-row .Content-details{
     @apply flex flex-col justify-center items-start gap-2;
 }
+.Content-form
+{
+    @apply flex flex-col items-center justify-center gap-2;
+}
+.Content-form .Content-row
+{
+    @apply flex flex-row items-center gap-2;
+}
+/* .Content-form .Content-row > div
+{
+    @apply flex-1
+} */
 
 
 @media (max-width: 900px)
@@ -248,6 +260,14 @@ code {
     .Banner .Banner-content .Banner-content-item-text 
     {
         @apply left-4;
+    }
+    .Content-form .Content-row
+    {
+        @apply flex flex-col items-center gap-2 w-full;
+    }
+    .Content-form .Content-row > div
+    {
+        @apply w-full
     }
 }
 
@@ -286,6 +306,18 @@ code {
     @apply p-4 bg-transparent border-0 outline-none flex-1
 }
 .Textinput .Textinput-submit
+{
+    @apply p-4
+}
+.Textinput .Textinput-title
+{
+    @apply p-4
+}
+.Textinput.Textinput-focused
+{
+    @apply shadow-primary shadow-md border-white
+}
+.Textinput-icon
 {
     @apply p-4
 }

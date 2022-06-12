@@ -6,20 +6,28 @@ import {FaSearch} from 'react-icons/fa'
 
 function TextInput({
     className = "w-auto self-stretch",
-    title = '',
+    type = 'text',
+    label = '',
     submit = false,
-    submitText = (text) => {}
+    submitText = (text) => {},
+    icon = null
 }) {
     const [text, setText] = useState('')
+    const [isfocused, setIsfocused] = useState(false)
 
     return (
-        <div className={"Textinput " + className}>
-            <label className="Textinput-title">{title}</label>
+        <div className={"Textinput " + className + " " + (isfocused && " Textinput-focused")}>
+            <label className="Textinput-title">{label}</label>
             <input 
                 className="Textinput-input" 
-                type="text" 
+                type={type}
                 value={text}
-                onChange={(e) => setText(e.target.value)}
+                onChange={(e) => {
+                    setText(e.target.value)
+                    submitText(e.target.value)
+                }}
+                onFocus={() => setIsfocused(true)}
+                onBlur={() => setIsfocused(false)}
             />
             {submit && <button 
                 className="Textinput-submit"
@@ -30,6 +38,7 @@ function TextInput({
             >
                 <FaSearch />
             </button>}
+            {icon && <div className="Textinput-icon">{icon}</div>}
         </div>
     )
 }

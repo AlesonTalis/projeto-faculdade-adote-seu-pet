@@ -7,18 +7,18 @@ import {
 
 const adotar = [
     {
-        title: "Os melhores amigos",
-        description: "Nossos pets são amigos de todos, e não só de você. Eles são amigos de todos e não só de você.",
+        titulo: "Os melhores amigos",
+        descricao: "Nossos pets são amigos de todos, e não só de você. Eles são amigos de todos e não só de você.",
         image: "./images/cat.svg"
     },
     {
-        title: "Os melhores amigos",
-        description: "Nossos pets são amigos de todos, e não só de você. Eles são amigos de todos e não só de você.",
+        titulo: "Os melhores amigos",
+        descricao: "Nossos pets são amigos de todos, e não só de você. Eles são amigos de todos e não só de você.",
         image: "./images/cat.svg"
     },
     {
-        title: "Os melhores amigos",
-        description: "Nossos pets são amigos de todos, e não só de você. Eles são amigos de todos e não só de você.",
+        titulo: "Os melhores amigos",
+        descricao: "Nossos pets são amigos de todos, e não só de você. Eles são amigos de todos e não só de você.",
         image: "./images/cat.svg"
     },
 ]
@@ -41,15 +41,17 @@ function HomeScreen() {
                     <h1>Por quê adotar?</h1>
                     <div className="Content-object">
                         <div className="Content-customgrid">
-                            {adotar.map((adot, index) => (<div className="Content-customgrid-item">
-                                <div className="Content-customgrid-item-image">
-                                    <img src="./images/cat.svg" alt="" />
+                            {adotar.map((adot, index) => (
+                                <div className="Content-customgrid-item" key={index}>
+                                    <div className="Content-customgrid-item-image">
+                                        <img src={adot.image} alt="" />
+                                    </div>
+                                    <div className="Content-customgrid-item-details">
+                                        <h2>{adot.titulo}</h2>
+                                        <p>{adot.descricao}</p>
+                                    </div>
                                 </div>
-                                <div className="Content-customgrid-item-details">
-                                    <h2>Os melhores amigos</h2>
-                                    <p>Nossos pets são amigos de todos, e não só de você. Eles são amigos de todos e não só de você.</p>
-                                </div>
-                            </div>)) }
+                            )) }
                         </div>
                     </div>
                 </div>

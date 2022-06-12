@@ -25,21 +25,21 @@ const banner_texts = [
 function PageBanner() {
     const [banner_text, setBannerText] = useState(banner_texts[0])
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            const index = banner_texts.indexOf(banner_text)
-            const next_index = index + 1
-            const next_banner_text = banner_texts[next_index]
+    // useEffect(() => {
+    //     const interval = setInterval(() => {
+    //         const index = banner_texts.indexOf(banner_text)
+    //         const next_index = index + 1
+    //         const next_banner_text = banner_texts[next_index]
         
-            if (next_banner_text) {
-                setBannerText(next_banner_text)
-            } else {
-                setBannerText(banner_texts[0])
-            }
-        }, 5000)
+    //         if (next_banner_text) {
+    //             setBannerText(next_banner_text)
+    //         } else {
+    //             setBannerText(banner_texts[0])
+    //         }
+    //     }, 5000)
 
-        return () => clearInterval(interval)
-    }, [banner_text])
+    //     return () => clearInterval(interval)
+    // }, [banner_text])
 
   return (
     <div className="Banner">

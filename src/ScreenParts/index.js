@@ -6,3 +6,11 @@ export {
 export {
     default as Banner
 } from './PageBanner'
+
+export {
+    default as Search
+} from './SearchArea'
+
+export {
+    default as TextInput
+} from './TextInput'

@@ -35,6 +35,10 @@ code {
     align-items: center;
 }
 
+
+.row {@apply flex flex-row;}
+
+
 .App
 {
     @apply flex flex-col w-full min-h-screen h-full;
@@ -133,4 +137,82 @@ code {
 .btn.btn-primary
 {
     @apply bg-primary text-white border-white font-bold py-2 px-4 rounded relative hover:translate-y-2 focus:outline-none active:translate-y-2;
+}
+
+.Content-area
+{
+    @apply flex flex-col mt-8 mb-4 relative;
+}
+.Content-area h1
+{
+    @apply font-bold text-2xl py-2 relative mb-4;
+}
+.Content-area h1::before{
+    content: '';
+    
+    @apply absolute bottom-0 left-0 w-32 h-2 bg-primary rounded-lg block;
+}
+.Content .Content-object
+{
+    @apply pb-4 relative;
+}
+.Content-row
+{
+    @apply flex flex-row gap-2;
+}
+.Content-grid
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 1rem;
+}
+
+
+
+
+
+.Dropdown{
+    @apply flex p-4 border-primary border rounded-md text-primary bg-white relative;
+}
+.Dropdown .Dropdown-content
+{
+    @apply flex-col absolute top-full left-0 w-56 z-50 hidden border-primary border text-primary bg-white;
+    left: -1px;
+}
+.Dropdown.opened .Dropdown-content
+{
+    @apply flex;
+}
+.Dropdown.opened
+{
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.Dropdown-content .Dropdown-item
+{
+    @apply px-4 py-2;
+}
+
+
+.Textinput
+{
+    @apply flex flex-row border-primary border rounded-md text-primary bg-white relative flex-1;
+}
+.Textinput .Textinput-input
+{
+    @apply p-4 bg-transparent border-0 outline-none flex-1
+}
+.Textinput .Textinput-submit
+{
+    @apply p-4
+}
+
+
+
+
+
+
+.Textinput, .Dropdown, .Dropdown .Dropdown-content
+{
+    @apply border-primary border text-white bg-primary
 }

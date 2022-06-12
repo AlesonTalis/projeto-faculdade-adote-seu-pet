@@ -359,41 +359,9 @@ form.pesquisar-pets .input
 }
 
 
-#heart-element
-{
-  position: fixed;
-  display: none;
-  top: 0;left: 0;right: 0;bottom: 0;
-  justify-content: center;
-  align-items: center;
-}
-#heart-element.enabled{display: flex;}
-
-
 @media screen and (max-width: 768px) {
-  header ul.menu
-  {
-    display: none;
-  }
-  header ul.login
-  {
-    margin-left: auto;
-  }
-  .banner-item, .banner-item center
-  {
-    padding: calc(var(--padding) * 2);
-  }
-  .banner .text
-  {
-    font-size: 75%;
-  }
   .page.contato
   {
     flex-direction: column;
-  }
-  .resultados
-  {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
   }
 }

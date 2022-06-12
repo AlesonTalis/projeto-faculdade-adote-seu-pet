@@ -4,7 +4,7 @@ No Terminal
 
 ``` bash
 
-git clone https://github.com/AlesonTalis/projeto-faculdade-adote-seu-pet/tree/react-dev
+git clone https://github.com/AlesonTalis/projeto-faculdade-adote-seu-pet/
 
 cd projeto-faculdade-adote-seu-pet
 

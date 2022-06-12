@@ -201,8 +201,55 @@ code {
     @apply font-bold text-xl;
 }
 
+.Content-customgrid
+{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+    @apply gap-2
+}
+.Content-customgrid .Content-customgrid-item:nth-child(1){grid-column: 1 / span 2;}
+.Content-customgrid .Content-customgrid-item:nth-child(2){grid-column: 4 / span 2;}
+.Content-customgrid .Content-customgrid-item:nth-child(3){grid-column: 2 / span 3;}
+.Content-customgrid-item
+{
+    @apply flex flex-row items-center justify-center relative;
+}
+.Content-customgrid-item-details
+{
+    @apply flex flex-col items-center justify-center gap-2;
+}
+.Content-customgrid-item-image
+{
+    @apply w-full h-full object-cover;
+}
+.Content-row .Content-details{
+    @apply flex flex-col justify-center items-start gap-2;
+}
 
 
+@media (max-width: 900px)
+{
+    .Content-grid, .Content-customgrid
+    {
+        display: flex;
+        flex-direction: column;
+    }
+    .Content-customgrid .Content-customgrid-item
+    {
+        @apply flex flex-row items-center justify-start relative;
+        padding: 0 20%;
+    }
+    .Header ul { display: none}
+    .Content
+    {
+        @apply px-4
+    }
+    .Banner .Banner-content .Banner-content-item-text 
+    {
+        @apply left-4;
+    }
+}
 
 
 

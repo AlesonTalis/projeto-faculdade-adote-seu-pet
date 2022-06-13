@@ -11,14 +11,14 @@ const banner_texts = [
         descricao: 'São mais de 30 milhões de animais abandonados ao redor do mundo. Ajudamos pessoas a encontrar um lar para seu animalzinho.',
         link: '#',
         link_text: 'Quero adotar',
-        imagem: './public/images/beautiful-pet-portrait-of-small-dog-and-cat.jpg'
+        imagem: '/images/beautiful-pet-portrait-of-small-dog-and-cat.jpg'
     },
     {
         titulo: 'Adote uma vida Adote um carinho',
         descricao: 'São mais de 30 milhões de animais abandonados ao redor do mundo. Ajudamos pessoas a encontrar um lar para seu animalzinho.',
         link: '#',
         link_text: 'Quero adotar',
-        imagem: './public/images/lovely-pet-portrait-isolated.jpg'
+        imagem: '/images/lovely-pet-portrait-isolated.jpg'
     },
 ]
 

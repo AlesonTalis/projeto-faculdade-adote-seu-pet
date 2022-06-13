@@ -14,3 +14,11 @@ export {
 export {
     default as TextInput
 } from './TextInput'
+
+export {
+    default as Contato
+} from './Contato'
+
+export {
+    default as Chat
+} from './ChatArea'

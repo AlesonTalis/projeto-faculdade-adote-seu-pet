@@ -238,6 +238,10 @@ code {
 {
     @apply flex-1
 } */
+.Content-customgrid-item-details h2
+{
+    @apply font-bold text-xl;
+}
 
 
 @media (max-width: 900px)

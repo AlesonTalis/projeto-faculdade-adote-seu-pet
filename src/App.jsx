@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { 
     Routes, 
     Route
@@ -10,13 +10,15 @@ import {
     Home
 } from './Screens'
 import {
-    Header
+    Header, Chat
 } from './ScreenParts'
 
 function App() {
 
     const [userLogged, setUserLogged] = useState(false)
     const [userName, setUserName] = useState('')
+
+    const chatRef = useRef(null)
 
     useEffect(() => {
         if (userLogged) return
@@ -40,7 +42,9 @@ function App() {
             <Routes>
                 <Route 
                     path="/"
-                    element={<Home/>}
+                    element={<Home chat={(chatId) => {
+                        chatRef.current.startChatWith(chatId)
+                    }}/>}
                 />
                 <Route
                     path="/cadastrar"
@@ -55,6 +59,7 @@ function App() {
                     element={<Logout logout={(logged) => setUserLogged(logged)}/>}
                 />
             </Routes>
+            <Chat ref={chatRef}/>
         </div>
     )
 }

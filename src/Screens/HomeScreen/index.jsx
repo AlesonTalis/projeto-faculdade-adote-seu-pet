@@ -1,30 +1,32 @@
 import React from 'react'
 
 import {
-    Banner, Search
+    Banner, Search, Contato
 } from '../../ScreenParts'
 
 
 const adotar = [
     {
         titulo: "Os melhores amigos",
-        descricao: "Nossos pets são amigos de todos, e não só de você. Eles são amigos de todos e não só de você.",
+        descricao: "Sempre fieis aos seus donos e infinito amor incodicioal",
         image: "./images/cat.svg"
     },
     {
         titulo: "Os melhores amigos",
         descricao: "Nossos pets são amigos de todos, e não só de você. Eles são amigos de todos e não só de você.",
-        image: "./images/cat.svg"
+        image: "./images/dog1.svg"
     },
     {
         titulo: "Os melhores amigos",
         descricao: "Nossos pets são amigos de todos, e não só de você. Eles são amigos de todos e não só de você.",
-        image: "./images/cat.svg"
+        image: "./images/dog2.svg"
     },
 ]
 
 
-function HomeScreen() {
+function HomeScreen({
+    chat = (id) => {}
+}) {
     return (
         <>
             <Banner />
@@ -36,7 +38,7 @@ function HomeScreen() {
                         <p>Navegue abaixo, para acessar as fotos e tudo que você precisa saber sobre os pets: nome, grupo etário, porte, sexo, se é castrado ou não, se há alguma necessidade especial ou doença, além do perfil social.</p>
                     </div>
                 </div>
-                <Search/>
+                <Search chat={chat}/>
                 <div className="Content-area">
                     <h1>Por quê adotar?</h1>
                     <div className="Content-object">
@@ -55,18 +57,7 @@ function HomeScreen() {
                         </div>
                     </div>
                 </div>
-                <div className="Content-area">
-                    <div className="Content-row">
-                        <div className="Content-image">
-                            <img src="./images/phones.svg" alt="" />
-                        </div>
-                        <div className="Content-details">
-                            <h1>Entre em nosso site</h1>
-                            <p>Registre-se com apenas alguns passos em nosso site especializado na busca de animais para adoção</p>
-                            <button className="btn">Entrar</button>
-                        </div>
-                    </div>
-                </div>
+                <Contato/>
             </div>
         </>
     )

@@ -22,7 +22,7 @@ const todosAnimais = [
 ]
 
 // list of unsplash images of cats and dogs
-const data = [
+export const data = [
     {
         title: 'Cachorro',
         detalhes: 'Alguns detalhes',
@@ -71,7 +71,9 @@ const data = [
 ]
 
 
-function Search() {
+function Search({
+    chat = (id) => {}
+}) {
     const [animalSpecie, setAnimalSpecie] = useState(0)
     const [animais, setAnimais] = useState(0)
 
@@ -113,7 +115,10 @@ function Search() {
                                 <button>
                                     <FaHeart />
                                 </button>
-                                <button>
+                                <button onClick={(e) => {
+                                    e.preventDefault()
+                                    chat(index)
+                                }}>
                                     <BsFillChatDotsFill />
                                 </button>
                             </div>

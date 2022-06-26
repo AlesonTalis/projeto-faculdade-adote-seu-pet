@@ -11,19 +11,19 @@ import {
 const linkies = [
     {
         name: 'Adote',
-        link: '#'
+        link: '/adotar'
     },
     {
         name: 'Doar',
-        link: '#'
+        link: '/doar'
     },
     {
         name: 'Sobre',
-        link: '#'
+        link: '#sobre'
     },
     {
         name: 'Contato',
-        link: '#'
+        link: '#contato'
     }
 ]
 
@@ -47,9 +47,9 @@ function HeaderMenu({
     return (
         <div className="Header">
             <div className="Content">
-                <a href="/" className="Link">
+                <Link to="/" className="Link">
                     <h1>Adote um Pet</h1>
-                </a>
+                </Link>
                 <ul>
                     {linkies.map((link, index) => (
                         <li key={index}>

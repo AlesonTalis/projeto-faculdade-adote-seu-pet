@@ -15,7 +15,7 @@ function DoarPet() {
     const [petOwner,setPetOwner] = useState('')
     const [petContato,setPetContato] = useState('')
 
-    const [showPopup,setShowPopup] = useState(null)
+    const [showPopup,setShowPopup] = useState(false)
     const [popupMessage,setPopupMessage] = useState([])
 
     const addPetImage = () => {

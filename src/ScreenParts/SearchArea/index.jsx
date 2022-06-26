@@ -1,5 +1,6 @@
 import React, {
-    useState
+    useState,
+    useEffect
 } from 'react'
 import DropDown from '../DropDownInput'
 import TextInput from '../TextInput'
@@ -78,60 +79,80 @@ function Search({
     const [animalSpecie, setAnimalSpecie] = useState(0)
     const [animais, setAnimais] = useState(0)
 
-  return (
-    <div className="Content-area">
-        <h1>Procure por um pet</h1>
-        <div className="Content-object">
-            <div className="Content-row">
-                <DropDown 
-                    dtitle="Espécie:" 
-                    dvalues={animalSpecies}
-                    dselected={(index) => setAnimalSpecie(index)}
-                />
-                <DropDown
-                    dtitle="Todos os animais:"
-                    dvalues={todosAnimais}
-                    dselected={(index) => setAnimais(index)}
-                />
+    const loadPets = () => {
+        var pets = JSON.parse(localStorage.getItem('pets'))
 
-                <TextInput
-                    submit={true}
-                    submitText={(text) => {
-                        console.log(`"${text}" + ${animalSpecies[animalSpecie]} + ${todosAnimais[animais]}`)
-                    }}
-                />
-            </div>
-            <div className="Content-grid">
-                {data.map((item, index) => (
-                    <div className="Content-grid-item" key={index}>
-                        <div className="Content-grid-item-image">
-                            <img src={item.image} alt=""/>
-                        </div>
-                        <div className="Content-grid-item-details">
-                            <div className="Content-grid-item-details-text">
-                                <h2>{item.title}</h2>
-                                <p>{item.detalhes}</p>
+        if (pets !== null && pets !== undefined)
+        {
+            setAnimais([...pets])
+            console.log(pets)
+        }
+        else
+        {
+            console.log(pets)
+        }
+    }
+
+    useEffect(() => {
+        loadPets()
+
+        return () => {}
+    }, [])
+
+    return (
+        <div className="Content-area">
+            <h1>Procure por um pet</h1>
+            <div className="Content-object">
+                <div className="Content-row">
+                    <DropDown 
+                        dtitle="Espécie:" 
+                        dvalues={animalSpecies}
+                        dselected={(index) => setAnimalSpecie(index)}
+                    />
+                    <DropDown
+                        dtitle="Todos os animais:"
+                        dvalues={todosAnimais}
+                        dselected={(index) => setAnimais(index)}
+                    />
+
+                    <TextInput
+                        submit={true}
+                        submitText={(text) => {
+                            console.log(`"${text}" + ${animalSpecies[animalSpecie]} + ${todosAnimais[animais]}`)
+                        }}
+                    />
+                </div>
+                <div className="Content-grid">
+                    {animais && animais.map((item, index) => (
+                        <div className="Content-grid-item" key={index}>
+                            <div className="Content-grid-item-image">
+                                <img src={item._petImage} alt=""/>
                             </div>
-                            <div className="Content-grid-item-details-buttons">
-                                <button>
-                                    <FaHeart />
-                                </button>
-                                <button onClick={(e) => {
-                                    e.preventDefault()
-                                    chat(index)
-                                }}>
-                                    <BsFillChatDotsFill />
-                                </button>
+                            <div className="Content-grid-item-details">
+                                <div className="Content-grid-item-details-text">
+                                    <h2>{item._petNome}</h2>
+                                    <p>{item._petOwner}</p>
+                                </div>
+                                <div className="Content-grid-item-details-buttons">
+                                    <button>
+                                        <FaHeart />
+                                    </button>
+                                    <button onClick={(e) => {
+                                        e.preventDefault()
+                                        chat(item.id)
+                                    }}>
+                                        <BsFillChatDotsFill />
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    )
-                )}
+                        )
+                    )}
+                </div>
+                
             </div>
-            
         </div>
-    </div>
-  )
+    )
 }
 
 export default Search

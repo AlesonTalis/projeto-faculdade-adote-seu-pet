@@ -5,19 +5,32 @@ import React,
     useEffect
 } from 'react'
 
+import {
+    Link
+} from 'react-router-dom'
+
+const banner_links = [
+    {
+        link: '/adotar',
+        text: 'Quero Adotar'
+    },
+    {
+        link: '/doar',
+        text: 'Quero Doar'
+    }
+]
+
 const banner_texts = [
     {
         titulo: 'Adote uma vida Adote um carinho',
         descricao: 'São mais de 30 milhões de animais abandonados ao redor do mundo. Ajudamos pessoas a encontrar um lar para seu animalzinho.',
-        link: '#',
-        link_text: 'Quero adotar',
+        link: banner_links,
         imagem: '/images/beautiful-pet-portrait-of-small-dog-and-cat.jpg'
     },
     {
         titulo: 'Adote uma vida Adote um carinho',
         descricao: 'São mais de 30 milhões de animais abandonados ao redor do mundo. Ajudamos pessoas a encontrar um lar para seu animalzinho.',
-        link: '#',
-        link_text: 'Quero adotar',
+        link: banner_links,
         imagem: '/images/lovely-pet-portrait-isolated.jpg'
     },
 ]
@@ -49,7 +62,15 @@ function PageBanner() {
                 <div>
                     <h1>{banner_text.titulo}</h1>
                     <p>{banner_text.descricao}</p>
-                    <a href={banner_text.link} className="btn btn-primary">{banner_text.link_text}</a>
+                    <div className="BannerLinks">
+                        {banner_links && (
+                            banner_links.map((link, index) => {
+                                return (
+                                    <Link to={link.link} className="btn btn-primary">{link.text}</Link>
+                                )
+                            })
+                        )}
+                    </div>
                 </div>
             </div>
         </div>

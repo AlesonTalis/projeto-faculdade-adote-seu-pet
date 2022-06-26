@@ -7,7 +7,9 @@ import {
     Cadastrar,
     Login,
     Logout,
-    Home
+    Home,
+    AdotarPet,
+    DoarPet
 } from './Screens'
 import {
     Header, Chat
@@ -57,6 +59,14 @@ function App() {
                 <Route 
                     path="/logout"
                     element={<Logout logout={(logged) => setUserLogged(logged)}/>}
+                />
+                <Route
+                    path="/adotar"
+                    element={<AdotarPet/>}
+                />
+                <Route
+                    path="/doar"
+                    element={<DoarPet/>}
                 />
             </Routes>
             <Chat ref={chatRef}/>

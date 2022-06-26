@@ -14,3 +14,11 @@ export {
 export {
     default as Logout
 } from './LogoutUsuario'
+
+export {
+    default as AdotarPet
+} from './AdotarPet'
+
+export {
+    default as DoarPet
+} from './DoarPet'

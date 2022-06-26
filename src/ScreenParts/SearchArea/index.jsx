@@ -72,7 +72,8 @@ export const data = [
 
 
 function Search({
-    chat = (id) => {}
+    chat = (id) => {},
+    pagination = false
 }) {
     const [animalSpecie, setAnimalSpecie] = useState(0)
     const [animais, setAnimais] = useState(0)

@@ -8,11 +8,13 @@ function TextInput({
     className = "w-auto self-stretch",
     type = 'text',
     label = '',
+    value = '',
+    placeholder = '',
     submit = false,
     submitText = (text) => {},
     icon = null
 }) {
-    const [text, setText] = useState('')
+    const [text, setText] = useState(value)
     const [isfocused, setIsfocused] = useState(false)
 
     return (
@@ -28,6 +30,7 @@ function TextInput({
                 }}
                 onFocus={() => setIsfocused(true)}
                 onBlur={() => setIsfocused(false)}
+                placeholder={placeholder}
             />
             {submit && <button 
                 className="Textinput-submit"

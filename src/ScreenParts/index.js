@@ -22,3 +22,11 @@ export {
 export {
     default as Chat
 } from './ChatArea'
+
+export {
+    default as DropDownInput
+} from './DropDownInput' 
+
+export {
+    default as Popup
+} from './Popup'

@@ -21,4 +21,4 @@ export {
 
 export {
     default as DoarPet
-} from './DoarPet'
+} from './DoarPet' 
